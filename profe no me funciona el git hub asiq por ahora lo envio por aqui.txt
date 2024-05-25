@@ -1,0 +1,328 @@
+ let arreglo = []
+
+ function construirArrgelo(large) {
+
+    arreglo.length = large
+
+ }
+ var large = parseInt(prompt("Digitar que tan largo quiere su arreglo"))
+ construirArrgelo(large)
+ alert("tamaño del arreglo exitoso, disfute :) ")
+
+
+
+function ArregloLlenar() {
+
+        for (let i = 0; i < arreglo.length; i++) {
+         let nuneroRandom = Math.floor(Math.random() * 20) + 1
+
+           arreglo[i] = nuneroRandom
+    }
+
+
+       alert(arreglo)
+     console.log(arreglo)
+    alert("El arreglo se completo con numeros aleatorios correctamente")
+
+}
+
+function promedioArregl() {
+    
+     let total = 0
+
+
+     for (let i = 0; i < arreglo.length; i++) {
+        total = total + arreglo[i];
+    }
+
+    console.log("el promedio es: " + total)
+
+    alert("El promedio es:" + total)
+
+    return total / arreglo.length  // Como falte un dia fran me aconsejo y me explico el return :)
+}
+
+
+
+  function mayoresPromedio() { 
+
+       let prome = promedioArregl()
+
+        let cantidad = 0
+
+    for (let i = 0; i < arreglo.length; i++) {
+          if (arreglo[i] > prome) {
+
+             cantidad++;
+         }
+
+
+      }
+    return cantidad
+}
+
+function sumaValor(numsuma) {
+    var numsuma = parseInt(prompt("Digite un valor para sumarlo con los digitos de este arreglo"))
+
+
+    for (let index = 0; index < arreglo.length; index++) {
+
+        resultado = numsuma +  arreglo[index]
+
+        console.log("La suma de todo eso da como resultado :" + resultado)
+        alert("La suma de todo eso da como resultado: " + resultado)
+    }
+    return numsuma
+}
+
+
+
+function sumaImPares() {
+        let impares = 0
+
+       for (let i = 0; i < arreglo.length; i++) {
+
+        if ((arreglo[i] % 2) != 0) {
+               impares = impares + arreglo[i]
+        }
+    }
+
+     console.log("Suma de solo los impares da como result: " + impares)
+    alert("Suma de solo los impares da como result: " + impares)
+    return impares
+}
+  function mayorArreglo() {
+
+
+      let Mayor = 0
+         for (let i = 0; i < arreglo.length; i++) {
+
+         if (arreglo[i] > Mayor) {
+
+             Mayor = arreglo[i]
+         }
+
+      }
+      console.log("El valor mas gande del arreglo es: " +  Mayor)
+
+      alert("El valor mas gande del arreglo es: " + Mayor)
+
+
+    return Mayor
+
+}
+function mayorDifF() {
+
+      var valorDifF = 0
+
+    var diff = 0
+
+
+  for (let i = 0; i <= arreglo.length; i++) {
+
+    diff = arreglo[i] - arreglo[i + 1]
+
+          if (diff <= 0) {
+                diff = diff * -1
+          }
+  
+          if (diff > valorDifF) {
+             valorDifF = diff
+         }
+     }
+
+    console.log("El numero con una mayor diferencia es: "+ valorDifF)  //no sirve bien y ns porque la verdad
+
+    return valorDifF
+}
+
+
+
+
+
+ function encontrarElementoespecific(valir) {
+        let especifi = false
+       for (let i = 0; i <= arreglo.length; i++) {
+             if (valir == arreglo[i]) { 
+
+               especifi == true
+          }
+ 
+            return especifi
+     }
+   
+ }
+ 
+ function posicionElementp(valorNum) {
+    
+      let encontrar = false;
+
+     let posicion = -1;
+
+      for (let i = 0; i < arreglo.length; i++) {
+
+        if (valorNum == arreglo[i]) {
+
+             encontrar = true
+
+             posicion = i;
+
+             i = arreglo.length;
+           }
+
+      }
+
+
+
+        if  (encontrar) {
+         return posicion
+     } else {
+
+        return -1 + alert("No se encuentra presente en el arreglo")
+        
+        
+    }
+  
+   
+}
+
+function invertirArreglo() {
+       let Invertido = [] //Crear un "Nuevo arreglo" en este caso
+
+      Invertido.length = arreglo.length
+
+     let Posicion = 0
+
+     for (let i = arreglo.length; i >= 0; i--) {
+
+          Invertido[Posicion] = arreglo[i]
+
+
+         Posicion++
+     }
+
+
+       arreglo = Invertido
+
+     console.log("El arreglo se invirtio corrwctamente, porfavor use la opcion 12 para ver los cambios en el arreglo ")
+     alert("El arreglo se invirtio corrwctamente, porfavor use la opcion 12 para ver los cambios en el arreglo ")
+}
+
+  function insertarElemento(posicion1, posicionvalor) {
+       var posicion1 = parseInt(prompt("escriba la posicion que desea cambiar?: ")) 
+
+       var posicionvalor = parseInt(prompt("Digite el nuevo valor que desea asignarle: "))
+
+            arreglo[posicion1] = posicionvalor
+        alert("Porfavor digite la opcion 12 para ver los cambios que realizo en el arreglo")
+
+
+}
+
+function mostrarHileraArreglo() {
+
+     for (let i = 0; i < arreglo.length; i++) {
+   
+
+          console.log("Aqui se muestra el arreglo:  " + i, arreglo[i])
+          alert("Aqui se muestra el arreglo:  " + i, arreglo[i])
+    }
+}
+
+
+
+
+var inicio = true
+
+do {
+
+    var menu = parseInt(prompt("1. Llenar el arreglo\n 2.Promedio\n3. Valor mayor del promedio\n4.Suma de los valores del arreglo con un numero \n 5. Sumar solo los numeros impares \n 6.Mostrar el numero mas grande del arreglo \n 7.Diferencias entre solo 2 valores del arreglo \n 8.Encuentra un elemento en especifico que este en el arreglo \n 9.Posicion de un elemento especifivo que este en el arreglo \n 10. Invertir el orden del arreglo \n 11.Insertsr un nuevo elemento \n 12. Mostrar arreglo \n13.Cerrar aplicacion"))
+
+     switch (parseInt(menu)) {
+         case 1:
+
+            ArregloLlenar();
+            break;
+
+         case 2:
+
+          promedioArregl()
+            break;
+         case 3:
+
+          mayoresPromedio()
+            break;
+         case 4:
+
+          sumaValor()
+            break;
+         case 5:
+ 
+          sumaImPares()
+            break
+         case 6:
+
+          mayorArreglo()
+            break
+         case 7:
+
+          mayorDifF()
+
+
+            break
+
+         case 8:
+           
+         var num = parseInt(prompt("Digitar el numero que desea ver si se encuentra en el arreglo :) : "))
+
+         console.log("Este numero es " + encontrarElementoespecific(num))
+
+         alert("Este numero es " + encontrarElementoespecific(num))
+            break
+
+         case 9:
+
+         let num2 = parseInt(prompt("Ponga el numero que desea ver su posicion : "))
+
+          console.log("El numero a buscar se encuentra en la casilla  " + posicionElementp(num2))
+
+           alert("El numero a buscar se encuentra en la casilla  " + posicionElementp(num2)) //probar este metodo en proyectos siguientes asiq guardalo sebas
+         break
+         case 10:
+          invertirArreglo()
+
+          break
+
+          case 11:
+         insertarElemento()
+
+         break
+
+         case 12:
+          mostrarHileraArreglo()
+         break
+
+         case 13:
+            inicio = prompt("Desea terminar ciclo?")
+            if (inicio ="si"){
+                prompt = ("Gracias por ejecutar, deseo pasar :,)  ")
+                inicio = false
+            
+            
+            }
+            break
+
+        default: alert("Esto no es una opcion valida para el progama, intente de nuevo plz")
+            break
+
+    }
+} while (inicio == true)
+
+
+
+
+
+
+
+
+
